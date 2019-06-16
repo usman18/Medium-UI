@@ -1,3 +1,6 @@
 <resources>
         <string name="app_name">MediumUI</string>
+        <string name="your_daily_read">Your Daily Read</string>
+        <string name="notifications">Notifications</string>
+        <string name="search">Search</string>
 </resources>
