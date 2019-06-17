@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.uk.mediumui.Adapters.DailyArticleAdapter;
+import com.uk.mediumui.Adapters.MainArticleAdapter;
 import com.uk.mediumui.Adapters.NetworkFeedPagerAdapter;
 import com.uk.mediumui.Fragments.NetworkFeedFragment;
 import com.uk.mediumui.Models.Article;
@@ -40,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 	private ArrayList<Article> networkFeedArtices;
 	private NetworkFeedPagerAdapter pagerAdapter;
 	
+	private RecyclerView rvMainFeed;
+	private ArrayList<Article> mainFeedArticles;
+	private MainArticleAdapter mainArticleAdapter;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -60,8 +65,13 @@ public class MainActivity extends AppCompatActivity {
 		rvDailyArticles = findViewById(R.id.rvDailyReadArticles);
 		rvDailyArticles.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 		
+		rvMainFeed = findViewById(R.id.rvMainFeed);
+		rvMainFeed.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+		
+		
 		dailyReadArticles = new ArrayList<>();
 		networkFeedArtices = new ArrayList<>();
+		mainFeedArticles = new ArrayList<>();
 		
 		populateDailyFeedArticles();
 		
@@ -69,6 +79,14 @@ public class MainActivity extends AppCompatActivity {
 		rvDailyArticles.setAdapter(dailyArticleAdapter);
 		
 		populateNetworkFeed();
+		
+		populateMainFeedArticles();
+		
+		mainArticleAdapter = new MainArticleAdapter(MainActivity.this, mainFeedArticles);
+		rvMainFeed.setAdapter(mainArticleAdapter);
+		
+		
+		
 		
 	}
 	
@@ -83,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
 		dailyReadArticles.add(new Article(articleImages[1], authorImages[1], "Austin Tindle", "The Plight of a Junior Software Developer", "5 min read", true));
 		dailyReadArticles.add(new Article(articleImages[2], authorImages[2], "Paolo Rotolo", "Exploring new Coroutines and Lifecycle Architectural Components integration on Android", "7 min read", false));
 		dailyReadArticles.add(new Article(articleImages[3], authorImages[3], "Robert Roy Britt", "Coffee, Even a Lot, Linked to Longer Life", "6 min read", true));
+		dailyReadArticles.add(new Article(articleImages[0], authorImages[2], "Florin Pop", "How to create a Countdown component using React & MomentJS", "4 min read", true));
 		
 	}
 	
@@ -109,6 +128,18 @@ public class MainActivity extends AppCompatActivity {
 		networkFeedViewpager.setAdapter(pagerAdapter);
 		
 	}
+	
+	
+	private void populateMainFeedArticles() {
+		
+		mainFeedArticles.add(new Article(articleImages[0], authorImages[0], "Florin Pop", "How to create a Countdown component using React & MomentJS", "4 min read", true, "Based on your reading history", "3/20/2018"));
+		mainFeedArticles.add(new Article(articleImages[3], authorImages[3], "Robert Roy Britt", "Coffee, Even a Lot, Linked to Longer Life", "6 min read", true,"Life", "6 days ago"));
+		mainFeedArticles.add(new Article(articleImages[2], authorImages[2], "Paolo Rotolo", "Exploring new Coroutines and Lifecycle Architectural Components integration on Android", "7 min read", false, "Programming", "6 days ago"));
+		mainFeedArticles.add(new Article(articleImages[1], authorImages[1], "Austin Tindle", "The Plight of a Junior Software Developer", "5 min read", true,"From your network", "5 days ago"));
+		mainFeedArticles.add(new Article(articleImages[0], authorImages[0], "Florin Pop", "How to create a Countdown component using React & MomentJS", "4 min read", true, "Based on your reading history", "3/20/2018"));
+		
+	}
+	
 	
 	
 	

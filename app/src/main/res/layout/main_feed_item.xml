@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/black"
+        >
+        
+        
+        <TextView
+                android:id="@+id/tvTopic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="@color/grey"
+                android:text="Based on your reading history"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+        
+        
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                >
+                
+                <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/whiteText"
+                        android:text="How to write a great resume for software engineers"
+                        android:layout_marginEnd="4dp"
+                        android:maxLines="3"
+                        android:ellipsize="end"
+                        />
+        
+        
+                <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+                
+                        <ImageView
+                                android:id="@+id/imgArticleThumbnail"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:scaleType="centerCrop"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="8dp"
+                                />
+                
+                
+                        <ImageView
+                                android:id="@+id/imgAuthorProfilePic"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="bottom|start"
+                                android:padding="3dp"
+                                android:background="@color/black"
+                                />
+        
+                
+                </FrameLayout>
+
+
+        </LinearLayout>
+        
+        <RelativeLayout
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                
+                <TextView
+                        android:id="@+id/tvAuthor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zhia Chong"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@color/whiteText"
+                        android:layout_marginBottom="4dp"
+                        />
+                
+                <TextView
+                        android:id="@+id/tvTimeStamp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey"
+                        android:layout_below="@id/tvAuthor"
+                        android:text="3/20/2018"
+                        />
+                
+                <TextView
+                        android:id="@+id/tvDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dot"
+                        android:layout_below="@id/tvAuthor"
+                        android:layout_toEndOf="@id/tvTimeStamp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:textColor="@color/grey"
+                        />
+                
+                
+                <TextView
+                        android:id="@+id/tvDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9 min read"
+                        android:textColor="@color/grey"
+                        android:layout_toEndOf="@id/tvDot"
+                        android:layout_below="@id/tvAuthor"
+                        />
+                
+                
+                
+                <TextView
+                        android:id="@+id/imgPremium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_star"
+                        android:layout_toEndOf="@id/tvDuration"
+                        android:layout_below="@id/tvAuthor"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_toStartOf="@id/imgBookMark"
+                        />
+        
+        
+                <ImageView
+                        android:id="@+id/imgOptions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_more_vert"
+                        android:layout_below="@id/tvAuthor"
+                        android:layout_alignParentEnd="true"
+                        />
+        
+        
+                <ImageView
+                        android:id="@+id/imgBookMark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_bookmark"
+                        android:layout_below="@id/tvAuthor"
+                        android:layout_toStartOf="@id/imgOptions"
+                        android:layout_marginEnd="16dp"
+                        />
+                
+                
+                
+                
+        </RelativeLayout>
+  
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                />
+        
+</LinearLayout>

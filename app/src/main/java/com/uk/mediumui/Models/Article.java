@@ -10,6 +10,8 @@ public class Article implements Serializable {
 	private String title;
 	private String duration;
 	private boolean premium;
+	private String topic;
+	private String timestamp;
 	
 	
 	public Article(String articleImage, String authorProfilePic, String author, String title, String duration, boolean premium) {
@@ -19,6 +21,27 @@ public class Article implements Serializable {
 		this.title = title;
 		this.duration = duration;
 		this.premium = premium;
+	}
+	
+	public Article(String articleImage, String authorProfilePic, String author, String title, String duration, boolean premium, String topic, String timestamp) {
+		this.articleImage = articleImage;
+		this.authorProfilePic = authorProfilePic;
+		this.author = author;
+		this.title = title;
+		this.duration = duration;
+		this.premium = premium;
+		this.topic = topic;
+		this.timestamp = timestamp;
+	}
+	
+	public Article(String articleImage, String authorProfilePic, String author, String title, String duration, boolean premium, String timestamp) {
+		this.articleImage = articleImage;
+		this.authorProfilePic = authorProfilePic;
+		this.author = author;
+		this.title = title;
+		this.duration = duration;
+		this.premium = premium;
+		this.timestamp = timestamp;
 	}
 	
 	public String getAuthor() {
@@ -61,11 +84,27 @@ public class Article implements Serializable {
 		this.authorProfilePic = authorProfilePic;
 	}
 	
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+	
+	public String getTopic() {
+		return topic;
+	}
+	
 	public boolean isPremium() {
 		return premium;
 	}
 	
 	public void setPremium(boolean premium) {
 		this.premium = premium;
+	}
+	
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
+	}
+	
+	public String getTimestamp() {
+		return timestamp;
 	}
 }
