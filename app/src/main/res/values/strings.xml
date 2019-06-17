@@ -3,4 +3,6 @@
         <string name="your_daily_read">Your Daily Read</string>
         <string name="notifications">Notifications</string>
         <string name="search">Search</string>
+        <string name="tune_your_recommendations">Tune your recommendations</string>
+        <string name="done_for_today">Done for Today</string>
 </resources>
