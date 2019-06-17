@@ -5,4 +5,6 @@
         <string name="search">Search</string>
         <string name="tune_your_recommendations">Tune your recommendations</string>
         <string name="done_for_today">Done for Today</string>
+        <string name="new_from_your_network">New from your network</string>
+        <string name="dot">•</string>
 </resources>

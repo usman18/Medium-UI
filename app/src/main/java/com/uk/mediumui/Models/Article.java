@@ -1,6 +1,8 @@
 package com.uk.mediumui.Models;
 
-public class Article {
+import java.io.Serializable;
+
+public class Article implements Serializable {
 	
 	private String articleImage;
 	private String authorProfilePic;

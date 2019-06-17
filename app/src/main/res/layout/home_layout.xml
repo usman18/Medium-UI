@@ -96,6 +96,40 @@
                 </LinearLayout>
                 
                 
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:orientation="vertical"
+                        android:background="#262626"
+                        >
+                        
+                        
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/new_from_your_network"
+                                android:textColor="#d7efef"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="20dp"
+                                />
+        
+                        <com.uk.mediumui.CustomViewPager
+                                android:id="@+id/networkFeedViewpager"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        
+                </LinearLayout>
+        
+                
+
+                
+
         </LinearLayout>
         
         

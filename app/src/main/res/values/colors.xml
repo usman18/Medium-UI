@@ -6,5 +6,6 @@
         <color name="whiteText">#e6e6e6</color>
         <color name="black">#000000</color>
         <color name="divider">#2f2f2f</color>
+        <color name="grey">#606060</color>
 
 </resources>

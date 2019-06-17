@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="8dp"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
+        
+        
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/black"
+                >
+                
+                <ImageView
+                        android:id="@+id/imgArticleThumbnail"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scaleType="matrix"
+                        />
+                
+                <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:textSize="22sp"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/whiteText"
+                        android:text="Clean Architecture Example with Kotlin Multiplatform"
+                        />
+                
+                <TextView
+                        android:id="@+id/tvAuthor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/whiteText"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Tom Seifert"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        />
+                
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        >
+        
+        
+                        <TextView
+                                android:id="@+id/tvTimeStamp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Yesterday"
+                                android:textColor="@color/grey"
+                                />
+                        
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dot"
+                                android:textColor="@color/whiteText"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                />
+                        
+                        <TextView
+                                android:id="@+id/tvDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey"
+                                android:text="7 min read"
+                                />
+                        
+
+                </LinearLayout>
+                
+        </LinearLayout>
+        
+        
+        
+</android.support.v7.widget.CardView>

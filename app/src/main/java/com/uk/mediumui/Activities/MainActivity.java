@@ -1,6 +1,8 @@
 package com.uk.mediumui.Activities;
 
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.uk.mediumui.Adapters.DailyArticleAdapter;
+import com.uk.mediumui.Adapters.NetworkFeedPagerAdapter;
+import com.uk.mediumui.Fragments.NetworkFeedFragment;
 import com.uk.mediumui.Models.Article;
 import com.uk.mediumui.R;
 
@@ -29,10 +33,12 @@ public class MainActivity extends AppCompatActivity {
 	private NavigationView navigationView;
 	
 	private RecyclerView rvDailyArticles;
+	private DailyArticleAdapter dailyArticleAdapter;
+	private ArrayList<Article> dailyReadArticles;
 	
-	private DailyArticleAdapter adapter;
-	
-	private ArrayList<Article> articles;
+	private ViewPager networkFeedViewpager;
+	private ArrayList<Article> networkFeedArtices;
+	private NetworkFeedPagerAdapter pagerAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,33 +55,62 @@ public class MainActivity extends AppCompatActivity {
 		
 		drawerLayout = findViewById(R.id.drawer);
 		navigationView = findViewById(R.id.navigationView);
+		networkFeedViewpager = findViewById(R.id.networkFeedViewpager);
 		
 		rvDailyArticles = findViewById(R.id.rvDailyReadArticles);
 		rvDailyArticles.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 		
-		articles = new ArrayList<>();
+		dailyReadArticles = new ArrayList<>();
+		networkFeedArtices = new ArrayList<>();
 		
-		populateArticles();
+		populateDailyFeedArticles();
 		
-		adapter = new DailyArticleAdapter(MainActivity.this, articles);
-		rvDailyArticles.setAdapter(adapter);
+		dailyArticleAdapter = new DailyArticleAdapter(MainActivity.this, dailyReadArticles);
+		rvDailyArticles.setAdapter(dailyArticleAdapter);
+		
+		populateNetworkFeed();
 		
 	}
 	
 	
-	private void populateArticles() {
+	private void populateDailyFeedArticles() {
 		
-		if (articles == null) {
-			articles = new ArrayList<>();
+		if (dailyReadArticles == null) {
+			dailyReadArticles = new ArrayList<>();
 		}
 		
-		articles.add(new Article(articleImages[0], authorImages[0], "Florin Pop", "How to create a Countdown component using React & MomentJS", "4 min read", true));
-		articles.add(new Article(articleImages[1], authorImages[1], "Austin Tindle", "The Plight of a Junior Software Developer", "5 min read", true));
-		articles.add(new Article(articleImages[2], authorImages[2], "Paolo Rotolo", "Exploring new Coroutines and Lifecycle Architectural Components integration on Android", "7 min read", false));
-		articles.add(new Article(articleImages[3], authorImages[3], "Robert Roy Britt", "Coffee, Even a Lot, Linked to Longer Life", "6 min read", true));
-		
+		dailyReadArticles.add(new Article(articleImages[0], authorImages[0], "Florin Pop", "How to create a Countdown component using React & MomentJS", "4 min read", true));
+		dailyReadArticles.add(new Article(articleImages[1], authorImages[1], "Austin Tindle", "The Plight of a Junior Software Developer", "5 min read", true));
+		dailyReadArticles.add(new Article(articleImages[2], authorImages[2], "Paolo Rotolo", "Exploring new Coroutines and Lifecycle Architectural Components integration on Android", "7 min read", false));
+		dailyReadArticles.add(new Article(articleImages[3], authorImages[3], "Robert Roy Britt", "Coffee, Even a Lot, Linked to Longer Life", "6 min read", true));
 		
 	}
+	
+	
+	private void populateNetworkFeed() {
+		//Todo : Your businesss logic goes here. Below is just some demonstration code
+		networkFeedArtices = dailyReadArticles;
+		
+		ArrayList<Fragment> feedFragments = new ArrayList<>();
+		
+		for (Article article : networkFeedArtices) {
+			
+			NetworkFeedFragment feedFragment = new NetworkFeedFragment();
+			Bundle bundle = new Bundle();
+			bundle.putSerializable("ARTICLE", article);
+			feedFragment.setArguments(bundle);
+			
+			feedFragments.add(feedFragment);
+			
+		}
+		
+		
+		pagerAdapter = new NetworkFeedPagerAdapter(getSupportFragmentManager(), feedFragments);
+		networkFeedViewpager.setAdapter(pagerAdapter);
+		
+	}
+	
+	
 	
 	
 	@Override
