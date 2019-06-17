@@ -7,5 +7,7 @@
         <color name="black">#000000</color>
         <color name="divider">#2f2f2f</color>
         <color name="grey">#606060</color>
-
+        <color name="nav_item_selected">#d9d9d9</color>
+        <color name="nav_item_unselected">#929292</color>
+        <color name="nav_items_background">#3c3c3c</color>
 </resources>

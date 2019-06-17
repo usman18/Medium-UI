@@ -41,15 +41,213 @@
                 <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/black"
+                        android:background="@color/nav_items_background"
                         >
                         
                         <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:background="@color/black"
                                 >
+                                
+                                <LinearLayout
+                                        android:id="@+id/header"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/black"
+                                        android:orientation="vertical"
+                                        android:padding="32dp"
+                                        >
+        
+                                        <de.hdodenhof.circleimageview.CircleImageView
+                                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                android:id="@+id/imgProfilePic"
+                                                android:layout_width="65dp"
+                                                android:layout_height="65dp"
+                                                android:src="@color/grey"
+                                                android:layout_gravity="start"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_marginTop="32dp"
+                                                />
+                                        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/whiteText"
+                                                android:text="Usman Khan"
+                                                android:layout_gravity="start"
+                                                android:layout_marginBottom="12dp"
+                                                android:layout_marginTop="12dp"
+                                                />
+                                        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="12sp"
+                                                android:textColor="@color/grey"
+                                                android:text="See Profile"
+                                                android:layout_gravity="start"
+                                                />
+                                        
+                                        
+                                        
+                                </LinearLayout>
+                                
+                                
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:paddingTop="32dp"
+                                        android:paddingBottom="32dp"
+                                        android:paddingStart="32dp"
+                                        >
+                                        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/home"
+                                                android:textColor="@color/nav_item_unselected"
+                                                android:layout_marginBottom="8dp"
+                                                />
+        
+        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/audio"
+                                                android:textColor="@color/nav_item_unselected"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_marginTop="8dp"
+                                                />
+        
+        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/bookmarks"
+                                                android:textColor="@color/nav_item_unselected"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_marginTop="8dp"
+                                                />
+        
+        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/interests"
+                                                android:textColor="@color/nav_item_unselected"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_marginTop="8dp"
+                                                />
+                                        
+                                        <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/nav_item_unselected"
+                                                android:layout_marginTop="8dp"
+                                                android:layout_marginBottom="8dp"
+                                                />
+                                        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/colorAccent"
+                                                android:text="@string/become_a_member"
+                                                android:layout_marginTop="8dp"
+                                                android:layout_marginBottom="8dp"
+                                                />
+        
+        
+                                        <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/nav_item_unselected"
+                                                android:layout_marginTop="8dp"
+                                                android:layout_marginBottom="8dp"
+                                                />
+        
+        
+        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/new_story"
+                                                android:textColor="@color/nav_item_unselected"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_marginTop="8dp"
+                                                />
+        
+        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/stats"
+                                                android:textColor="@color/nav_item_unselected"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_marginTop="8dp"
+                                                />
+        
+        
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/stories"
+                                                android:textColor="@color/nav_item_unselected"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_marginTop="8dp"
+                                                />
+
+                                        
+                                        <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal"
+                                                android:paddingTop="8dp"
+                                                android:layout_marginTop="20dp"
+                                                android:paddingBottom="8dp"
+                                                android:layout_marginBottom="8dp"
+                                                >
+                                                
+                                                <ImageView
+                                                        android:id="@+id/imgMediumLogo"
+                                                        android:layout_width="30dp"
+                                                        android:layout_height="30dp"
+                                                        android:layout_gravity="center"
+                                                        android:layout_marginEnd="12dp"
+                                                        />
+                                                
+                                                
+                                                
+                                                <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:textColor="@color/nav_item_unselected"
+                                                        android:text="@string/settings"
+                                                        android:layout_marginStart="12dp"
+                                                        android:layout_marginEnd="12dp"
+                                                        android:textSize="12sp"
+                                                        android:layout_gravity="center"
+                                                        />
+                                                
+                                                
+                                                <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:textColor="@color/nav_item_unselected"
+                                                        android:text="@string/help"
+                                                        android:layout_marginStart="12dp"
+                                                        android:layout_marginEnd="12dp"
+                                                        android:textSize="12sp"
+                                                        android:layout_gravity="center"
+                                                        />
+                                                
+                                        </LinearLayout>
+                                        
+                                        
+
+                                </LinearLayout>
+                                
                                 
                                 
                                 

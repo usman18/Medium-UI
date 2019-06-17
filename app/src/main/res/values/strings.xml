@@ -7,4 +7,14 @@
         <string name="done_for_today">Done for Today</string>
         <string name="new_from_your_network">New from your network</string>
         <string name="dot">•</string>
+        <string name="audio">Audio</string>
+        <string name="home">Home</string>
+        <string name="bookmarks">Bookmarks</string>
+        <string name="interests">Interests</string>
+        <string name="become_a_member">Become a member</string>
+        <string name="new_story">New story</string>
+        <string name="stats">Stats</string>
+        <string name="stories">Stories</string>
+        <string name="settings">Settings</string>
+        <string name="help">Help</string>
 </resources>

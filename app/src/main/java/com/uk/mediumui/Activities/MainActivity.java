@@ -14,7 +14,9 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.uk.mediumui.Adapters.DailyArticleAdapter;
 import com.uk.mediumui.Adapters.MainArticleAdapter;
 import com.uk.mediumui.Adapters.NetworkFeedPagerAdapter;
@@ -29,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
 	
 	public static final String[] articleImages = {"https://cdn-images-1.medium.com/max/800/0*uxd3eEv1EyIUdvNi.png","https://cdn-images-1.medium.com/fit/t/800/240/0*d4dwuqe3UgDnmW06","https://cdn-images-1.medium.com/max/1200/1*Px8Aru4UCSh-JZTSbONViw.png", "https://cdn-images-1.medium.com/focal/1600/480/52/53/1*bpuuMHXCzmyyFcRrSliuOg.jpeg"};
 	public static final String[] authorImages = {"https://www.freecodecamp.org/news/content/images/size/w100/2019/06/avatar.jpg", "https://cdn-images-1.medium.com/fit/c/50/50/2*G9ReroQ6OmXRWJ9JMJ1Kxg.jpeg","https://cdn-images-1.medium.com/fit/c/50/50/2*0_Gqlwqdkk6L5BoTFzye3Q.jpeg", "https://cdn-images-1.medium.com/fit/c/100/100/1*zDKGzyimQ2BBMt_IACFjOg.jpeg"};
+	
+	public static final String mediumLogo = "https://cdn-images-1.medium.com/max/1600/1*emiGsBgJu2KHWyjluhKXQw.png";
+	public static final String profilePic = "https://avatars2.githubusercontent.com/u/40769429?s=460&v=4";
+	
+	private ImageView imgProfilePic;
+	private ImageView imgMediumLogo;
 	
 	private DrawerLayout drawerLayout;
 	private NavigationView navigationView;
@@ -58,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 		
 		toolbar.setTitle("Home");
 		
+		imgProfilePic = findViewById(R.id.imgProfilePic);
+		imgMediumLogo = findViewById(R.id.imgMediumLogo);
 		drawerLayout = findViewById(R.id.drawer);
 		navigationView = findViewById(R.id.navigationView);
 		networkFeedViewpager = findViewById(R.id.networkFeedViewpager);
@@ -85,7 +95,13 @@ public class MainActivity extends AppCompatActivity {
 		mainArticleAdapter = new MainArticleAdapter(MainActivity.this, mainFeedArticles);
 		rvMainFeed.setAdapter(mainArticleAdapter);
 		
+		Glide.with(MainActivity.this)
+			.load(mediumLogo)
+			.into(imgMediumLogo);
 		
+		Glide.with(imgProfilePic)
+			.load(profilePic)
+			.into(imgProfilePic);
 		
 		
 	}
