@@ -58,53 +58,68 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Toolbar toolbar = findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-		ActionBar actionBar = getSupportActionBar();
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setHomeAsUpIndicator(R.drawable.ic_hamburger);
+
 		
-		toolbar.setTitle("Home");
-		
-		imgProfilePic = findViewById(R.id.imgProfilePic);
-		imgMediumLogo = findViewById(R.id.imgMediumLogo);
-		drawerLayout = findViewById(R.id.drawer);
-		navigationView = findViewById(R.id.navigationView);
-		networkFeedViewpager = findViewById(R.id.networkFeedViewpager);
-		
-		rvDailyArticles = findViewById(R.id.rvDailyReadArticles);
-		rvDailyArticles.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-		
-		rvMainFeed = findViewById(R.id.rvMainFeed);
-		rvMainFeed.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-		
-		
-		dailyReadArticles = new ArrayList<>();
-		networkFeedArtices = new ArrayList<>();
-		mainFeedArticles = new ArrayList<>();
+		initialize();
 		
 		populateDailyFeedArticles();
-		
-		dailyArticleAdapter = new DailyArticleAdapter(MainActivity.this, dailyReadArticles);
-		rvDailyArticles.setAdapter(dailyArticleAdapter);
+		dailyArticleAdapter.notifyDataSetChanged();
 		
 		populateNetworkFeed();
 		
 		populateMainFeedArticles();
+		mainArticleAdapter.notifyDataSetChanged();
 		
-		mainArticleAdapter = new MainArticleAdapter(MainActivity.this, mainFeedArticles);
-		rvMainFeed.setAdapter(mainArticleAdapter);
-		
+		//Loading medium logo
 		Glide.with(MainActivity.this)
 			.load(mediumLogo)
 			.into(imgMediumLogo);
 		
+		//Loading profile pic
 		Glide.with(imgProfilePic)
 			.load(profilePic)
 			.into(imgProfilePic);
 		
 		
 	}
+
+
+	private void initialize() {
+
+		Toolbar toolbar = findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setHomeAsUpIndicator(R.drawable.ic_hamburger);
+
+		toolbar.setTitle("Home");
+
+		imgProfilePic = findViewById(R.id.imgProfilePic);
+		imgMediumLogo = findViewById(R.id.imgMediumLogo);
+		drawerLayout = findViewById(R.id.drawer);
+		navigationView = findViewById(R.id.navigationView);
+		networkFeedViewpager = findViewById(R.id.networkFeedViewpager);
+		
+		dailyReadArticles = new ArrayList<>();
+		networkFeedArtices = new ArrayList<>();
+		mainFeedArticles = new ArrayList<>();
+		
+		rvDailyArticles = findViewById(R.id.rvDailyReadArticles);
+		rvDailyArticles.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
+		rvMainFeed = findViewById(R.id.rvMainFeed);
+		rvMainFeed.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+		
+		dailyArticleAdapter = new DailyArticleAdapter(MainActivity.this, dailyReadArticles);
+		rvDailyArticles.setAdapter(dailyArticleAdapter);
+		
+		mainArticleAdapter = new MainArticleAdapter(MainActivity.this, mainFeedArticles);
+		rvMainFeed.setAdapter(mainArticleAdapter);
+		
+	}
+
+
+
 	
 	
 	private void populateDailyFeedArticles() {
