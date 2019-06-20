@@ -58,24 +58,26 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-
-		
+		//Initialize views and data structures
 		initialize();
 		
+		//Populate daily feed and set Adapter
 		populateDailyFeedArticles();
 		dailyArticleAdapter.notifyDataSetChanged();
 		
+		//Populate Network feed in viewpager using fragments
 		populateNetworkFeed();
 		
+		//Populate main feed and set adapter
 		populateMainFeedArticles();
 		mainArticleAdapter.notifyDataSetChanged();
 		
-		//Loading medium logo
+		//Loading medium logo in side nav
 		Glide.with(MainActivity.this)
 			.load(mediumLogo)
 			.into(imgMediumLogo);
 		
-		//Loading profile pic
+		//Loading profile pic in side nav
 		Glide.with(imgProfilePic)
 			.load(profilePic)
 			.into(imgProfilePic);
